@@ -1,0 +1,285 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+	function goback() {
+		parent.location.replace("first.html")
+	}
+	</script>
+<title> "김지희의 홈페이지에 오신걸 환영합니다."</title>
+<style>
+ :-ms-input-placeholder {color:purple;}
+  #bs1 {
+  border:2px solid Aqua;
+  box-shadow: 0px 0px 20px 10px Aqua;
+  }
+  input:focus{
+	background-color: skyblue;
+}
+ </style>
+
+</head>
+
+<body background= "images/lemon.jpg">
+<script src="test.js"></script>
+<script>
+function idCheck(){
+  alert('입력하신 아이디는 사용가능합니다');
+  }
+ </script>
+ 
+   
+  <script>
+  function joinCheck(){
+  var joinForm=document.getElementById("joinForm");
+  var id=joinForm.id.value;
+  var member_name=joinForm.member_name.value;
+  var member_pw=joinForm.member_pw.value;
+  var member_pw_1=joinForm.member_pw_1.value;
+  
+if(id!="" && member_name!="" && member_pw!="" && member_pw_1!="")
+ return true;
+else
+{ 
+while(id==""|| member_name==""|| member_pw==""|| member_pw_1=="")
+{
+   { 
+     alert('필수요소는 반드시 입력하세요');
+     joinForm.id.value="";
+	 joinForm.member_pw.value="";
+	 joinForm.member_name.value="";
+	 joinForm.member_pw_1.value="";
+	   return false;
+	}
+
+}
+ }
+ }
+ 
+	 
+  </script>
+<script>
+function noCheck(){
+
+var joinForm=document.getElementById("joinForm");
+var idLeft=joinForm.idLeft.value;
+var idRight=joinForm.idRight.value;
+var idNo= idLeft +idRight
+var k;
+
+var j
+
+
+for(var i=0; i<3; i++)
+ 
+   if(idNo==member_no[i])
+      idNo=k;
+	 
+if(idNo==k)
+{
+    alert('입력하신 주민등록번호는 사용중입니다.다시 입력하세요.');
+	joinForm.idLeft.value="";
+	joinForm.idRight.value="";
+}
+else
+{
+alert('입력하신 주민등록번호는 사용 가능합니다.사용하시겠습니까?');
+{
+
+  if(idNo.substr(0,2)>=00  && idNo.substr(0,2)<=20)
+    joinForm.year.value="20"+idNo.substr(0,2);
+  else
+    joinForm.year.value="19"+idNo.substr(0,2);
+	
+	
+  joinForm.month.value=idNo.substr(2,2);
+  joinForm.day.value=idNo.substr(4,2);
+  
+
+}
+   if(idNo.charAt(6)==2 || idNo.charAt(6)==4)
+      joinForm.gender2.checked=true;
+   else
+      joinForm.gender1.checked=true;
+     
+}
+}
+</script>
+<center>
+<h2 color ="red">회원가입하기</h2>
+<div style="width:100%;height:600px;overflow:auto">
+
+<table border="2" cellspacing="2" cellpadding="9" width="1000" height="1000" align="center" bgcolor="white" bordercolor="blue" id="bs1">
+<form action="first1.html" method="get" name="joinForm" id="joinForm">
+  <tr>
+    <td align="left" style="background-color: #C39BD3">아이디</td> 
+	
+    <td><input type="text" name="id" id="id" required/>
+	<input type ="button"  onclick="idCheck()" value ="중복검사"> </td>
+  </tr> 
+         
+  <tr>
+    <td align="left" style="background-color: #C39BD3">비밀번호 </td>
+    <td><input type="text" name="member_pw" id="member_pw" required/> 비밀번호 확인 <input type="text" name="member_pw_1" required/> </td>
+	
+  </tr>  
+
+  <tr>
+    <td align="left" style="background-color: #F7DC6F">이름</td>
+    <td><input type="text" name="member_name" id="member_name" required/></td>
+  </tr>
+   <tr>
+    <td align="left" style="background-color: #F7DC6F">관심 국가</td>
+	<td> 미국<input type="radio" name="grade">
+	     대만<input type="radio" name="grade">
+		 일본<input type="radio" name="grade">
+		 프랑스<input type="radio" name="grade">
+		 영국<input type="radio" name="grade">
+	</td>
+	</tr>
+	<tr>
+	
+	   <td align="left" style="background-color: #F7DC6F"> 장르 </td>
+ <td>
+    <select id = "major">
+	 <option>클래식</option>
+	 <option>재즈</option>
+	 <option>블루스</option>
+	 <option>힙합</option>
+	 <option>팝</option>
+	 <option>전자 음악</option>
+	 <option>컨트리 음악</option>
+	
+	 </select>
+	 </td>
+	 </tr>
+	  
+	  
+	 
+	 
+  <tr>
+   <td align="left" style="background-color: #A3E4D7">주민등록번호</td>
+    <td><input type ="number" maxlength = "6" name="idLeft" id="idLeft">- <input type ="number" maxlength ="7" name="idRight" id="idRight"> 
+	<input type ="button" name ="ncheck" onclick="noCheck()" value ="중복검사"> </td>
+	</tr>
+<tr>
+   <td align="left" style="background-color: #A3E4D7">성별</td>
+    <td> <input type = "radio" name ="gender" id="gender1"> 남
+	    <input type = "radio" name ="gender" id="gender2"> 여
+     </td>
+	</tr>
+<tr>
+ <td align="left" style="background-color: #A3E4D7"> 전화번호</td> 
+    <td> <input list="trans" name ="means" size ="7">
+	<datalist id = "trans">
+	 <option value ="02">
+	 <option value ="051">
+	 <option value ="053">
+	 <option value ="032">
+	 <option value ="062">
+	 <option value ="042">
+	 <option value ="052">
+	 <option value ="044">
+	 <option value ="031">
+	 <option value ="033">
+	 <option value ="043">
+	 <option value ="041">
+	 <option value ="063">
+	 <option value ="061">
+	 <option value ="054">
+	 <option value ="055">
+	 <option value ="064">
+	 </datalist>
+	 
+	 
+	 
+	 
+	- <input type = "number" name size ="7"> - <input type = "number" name size ="7"> </td>
+</tr>
+<tr>
+ <td align="left" style="background-color: #A3E4D7"> 휴대폰 </td>
+ <td>
+    <select id = "pn">
+	 <option>011</option>
+	 <option>016</option>
+	 <option>019</option>
+	 <option>010</option>
+	 </select>
+   - <input type "number" name = "call my" size ="7"> - <input type "number" name = "call my" size ="7"> </td>
+   </tr>
+ <tr>
+  <td align="left" style="background-color: #F5B7B1">주소 </td>
+   <td> <input type= "text" name = "address" size ="60"> 
+     <input type ="button" name ="adress check" onclick="alert('사용가능한 주소 입니다.')" value ="주소찾기"> <br>
+	 <input type ="text" "hidden" name ="specific"  placeholder ="상세주소를 입력하세요" size = "60">
+	 </td>
+	</tr>
+  <tr>
+   <td align="left" style="background-color: #F5B7B1">이메일 </td>
+   <td>
+    <input type ="text" name = "email" size = "15"> @
+	
+	   <select id ="mail">
+	   <option>naver.com</option>
+	   <optoin>hanmail.com</option>
+	   <option>gmail.com</option>
+	   <option>nate.com</option>
+	   <option>icloud.com</option>
+	   <option>yahoo.com</option>
+	   <option>Aol.com</option> 
+	   </select>
+	    <input type ="button" name ="ncheck" onclick="alert('이메일 확인이 완료되었습니다.')" value ="이메일 확인"> 
+	
+	</td>
+	</tr>
+<tr>
+  <td align="left" style="background-color: #F5B7B1"> 생년월일 </td>
+   <td>
+    <input type ="text" name="year" id="year"  size ="6">년
+         
+    <input type="text" name="month" id="month">
+	월 
+    <input type="text" name="day" id="day">
+    일
+		  
+		 
+		
+		 
+		 양력 <input type = "radio" name = "k">
+		 음력 <input type = "radio" name ="k">
+		 </td>
+	</tr>
+	<tr>
+	 <td align="left" style="background-color: #F5B7B1">관심있는 분야</td>
+	 <td>
+	  <input type ="checkbox" name "kind">여행
+	  <input type ="checkbox" name "kind">요리
+	  <input type= "checkbox"name ="kind">음악
+	  <input type= "checkbox" name = "kind">휴식
+	  <input type= "checkbox" name = "kind">놀이
+	  <input type ="checkbox" name ="kind"> 기타
+	   <br> (중복선택가능) 
+	  </td>
+	  </tr>
+	<tr>
+	  <td align="left" style="background-color: #7FB3D5">회원 소개 </td>
+	 <td>
+	 <textarea placeholder ="자신을 소개해 주세요! ex)별명.좌우명 등"  name="intro" cols ="110" rows="10"></textarea> 
+	 </td>
+	 </tr>
+		 
+    
+  <tr>
+    <td colspan="2" align="center"> 
+     	
+	<input type="button" value="가입하기" onClick="javascript:if(joinCheck()==true) submit()"></input>
+	<input type="reset" value="재입력">
+	 <input type="button" class="btn_list" value="BACK" onClick="goback()">
+    </td>
+  </tr>
+</form>
+</table>
+</div>
+
+
+</body>
+</html>

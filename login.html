@@ -1,0 +1,81 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+	function goback() {
+		parent.location.replace("first.html")
+	}
+	</script>
+  <script>
+  function joinCheck(){
+  var form1=document.getElementById("form1");
+  var member_id=form1.member_id.value;
+  var idName=form1.idName.value;
+  var member_pw=form1.member_pw.value;
+  
+  
+if(member_id!="" && idName!="" && member_pw!="")
+{
+return true;
+ 
+ }
+else
+{ 
+while(member_id==""|| idName==""|| member_pw=="")
+{
+   { 
+     alert('필수요소는 반드시 입력하세요');
+     form1.member_id.value="";
+	 form1.member_pw.value="";
+	 form1.idName.value="";
+	return false;
+	 }
+     }
+ }
+ }
+ 
+	 
+  </script>
+
+<title> 로그인하기</title>
+<style>
+#table2{
+  background:linear-gradient(red,yellow,green);}
+  #btn1{background-color:pink;}
+  #btn2{background-color:yellow;}
+  #btn3{background-color:skyblue;}
+  </style>
+</head>
+
+<body background= "images/lemon.jpg">
+<center>
+<h2>로그인하기</h2>
+
+<table border="1" cellspacing="0" cellpadding="10" width="700" height="400" align="center" id="table2" bordercolor="blue">
+<form action="first1.html" method="get" id="form1" name="form1">
+  <tr>
+    <td align="center" >아이디</td> 
+    <td><input type="text" id="member_id" name="member_id" required></td>
+  </tr> 
+         
+  <tr>
+    <td align="center">비밀번호</td> 
+    <td><input type="password" id="member_pw" name="member_pw" required></td>
+  </tr>  
+
+  <tr>
+    <td align="center">이름</td>
+    <td><input type="text" id="idName" name="idName" required></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">        
+		<input type="button" id="btn1" value="로그인" onClick="javascript:if(joinCheck()==true) submit()"></input>
+	<input type="reset" id="btn3"  value="다시작성">
+ <input type="button"  id="btn2" value="BACK" onClick="goback()">
+    </td>
+  </tr>
+</form>
+</table>
+
+
+</body>
+</html>
